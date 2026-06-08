@@ -1,0 +1,109 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-primary: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display-en: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-primary);
+  color: #111c2d;
+  background: #f4f2ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background: #f4f2ec;
+  color: #111c2d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  color: #fff;
+  background: #9f2733;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-shell {
+  min-height: 100vh;
+  background: #f7f6f2;
+}
+
+.inner-page {
+  width: min(calc(100% - 2rem), 80rem);
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 8rem 0 6rem;
+}
+
+:focus-visible {
+  outline: 2px solid #b8333f;
+  outline-offset: 4px;
+}
+
+html[lang='en'] .inner-page h1,
+html[lang='en'] .inner-page h2,
+html[lang='en'] .inner-page h3,
+.english-content h1,
+.english-content h2,
+.english-content h3 {
+  font-family: var(--font-display-en);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 767px) {
+  .inner-page {
+    width: min(calc(100% - 2rem), 80rem);
+    padding: 6.5rem 0 4rem;
+  }
+}

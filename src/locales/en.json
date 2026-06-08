@@ -1,0 +1,230 @@
+{
+  "menu": {
+    "HOME": "HOME",
+    "ABOUT": "ABOUT",
+    "PRODUCT": "PRODUCT",
+    "MEMBERS": "MEMBERS",
+    "NEWS": "NEWS",
+    "RESEARCH": "RESEARCH"
+  },
+  "header": {
+    "primaryNav": "Primary navigation",
+    "mobileNav": "Mobile navigation",
+    "contact": "Contact",
+    "changeLanguage": "Change language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "researchNavigation": {
+    "aria": "Research sections",
+    "breadcrumbAria": "Breadcrumb",
+    "introduction": "About MycoDx",
+    "areas": "Research Areas"
+  },
+  "research": {
+    "kicker": "Research Areas",
+    "title": "Precision research for mycobacterial diagnostics",
+    "description": "MycoDx researches diagnostic technologies for the precise detection of tuberculosis and NTM, antimicrobial resistance analysis, and clinical application.",
+    "initiativesTitle": "Core Research Areas",
+    "initiativesDescription": "The principal areas that shape MycoDx diagnostic technology and research development."
+  },
+  "gallery": {
+    "kicker": "Gallery",
+    "title": "Inside Our Research",
+    "description": "A closer look at the MycoDx laboratory environment and research activities."
+  },
+  "about": {
+    "kicker": "About MycoDx",
+    "title": "Revealing invisible tuberculosis\nwith uncompromising precision.",
+    "lead": "MycoDx is an infectious-disease diagnostics startup founded by experts with extensive experience at the forefront of the biotechnology industry.",
+    "heroImageAlt": "A microscope performing precision analysis on a microscopic pathogen sample",
+    "focusLabel": "MycoDx core diagnostic areas",
+    "intro": {
+      "kicker": "Who we are",
+      "title": "A biotechnology company setting a new standard in precision diagnostics",
+      "paragraph1": "Built on proprietary molecular diagnostic technology, MycoDx precisely detects mycobacteria, including Mycobacterium tuberculosis and non-tuberculous mycobacteria (NTM), while rapidly analyzing antimicrobial resistance.",
+      "paragraph2": "Beyond individual diagnostic kits, we are building a high-precision, rapid diagnostic platform designed to respond proactively to emerging global pandemic threats.",
+      "paragraph3": "From the research laboratory to real clinical settings, we continuously advance validated diagnostic solutions that healthcare professionals and patients can trust."
+    },
+    "focus": {
+      "tuberculosis": {
+        "title": "Precision TB Detection",
+        "description": "Mycobacterium tuberculosis"
+      },
+      "ntm": {
+        "title": "NTM Analysis",
+        "description": "Non-tuberculous mycobacteria"
+      },
+      "resistance": {
+        "title": "Rapid Resistance Analysis",
+        "description": "Drug resistance profiling"
+      }
+    },
+    "camellia": {
+      "kicker": "The Camellia Philosophy",
+      "title": "Like the camellia, blooming vividly and resiliently through winter.",
+      "description": "We detect microscopic pathogens that are difficult to diagnose and impossible to see, applying precision technology to the most challenging problems faced by healthcare professionals and patients."
+    },
+    "mission": {
+      "label": "Why we exist",
+      "title": "Protecting patients through accuracy and trust.",
+      "description": "Effective treatment begins with an accurate diagnosis. Through uncompromising precision and objective clinical evidence, MycoDx establishes dependable diagnostic standards for healthcare settings worldwide and contributes to healthier lives."
+    },
+    "vision": {
+      "kicker": "Mission & Vision",
+      "title": "A healthier future that begins with accurate diagnosis",
+      "statement": "Beyond a new standard for tuberculosis diagnosis, toward leadership in global diagnostic platforms.",
+      "description": "With validated technology and a scalable platform, we deliver faster and clearer answers wherever reliable diagnosis is needed.",
+      "pillars": {
+        "validation": {
+          "title": "Technology Advancement & Validation",
+          "description": "We continuously improve the quality and reliability of our diagnostic technology through close joint research and clinical collaboration with leading medical and research institutions."
+        },
+        "scalability": {
+          "title": "Platform Scalability",
+          "description": "Building on our expertise in tuberculosis and multidrug-resistant tuberculosis, we will expand our diagnostic capabilities to a broader range of infectious diseases and pathogens."
+        },
+        "global": {
+          "title": "Global Market Expansion",
+          "description": "Together with global industry partners, we will bring our diagnostic platform to markets worldwide and help eliminate gaps in access to healthcare."
+        }
+      }
+    }
+  },
+  "people": {
+    "kicker": "People",
+    "title": "Meet the MycoDx Team",
+    "description": "Our team advances a new standard for tuberculosis diagnosis through molecular diagnostics and focused research and development.",
+    "representative": "Representative Director",
+    "researchers": "Research Team"
+  },
+  "publication": {
+    "kicker": "Publication",
+    "title": "Research Output",
+    "description": "Explore peer-reviewed papers and patents from MycoDx.",
+    "sectionNavigation": "Publication sections",
+    "total": "Total.",
+    "yearUnknown": "Year not provided",
+    "emptyPapers": "No paper records are currently available.",
+    "emptyPatents": "Patent records will be updated when the source data is available.",
+    "country": "Country",
+    "registrationNumber": "Registration No."
+  },
+  "home": {
+    "eyebrow": "Mycobacteria Molecular Diagnostics",
+    "titleLine1": "Making the",
+    "titleLine2": "invisible visible.",
+    "description": "MycoDx develops precise molecular diagnostic and image-analysis solutions that reveal tuberculosis and non-tuberculous mycobacteria faster and more clearly.",
+    "indexLabel": "Explore MycoDx",
+    "indexIntro": "Research-led diagnostics, designed to move from the laboratory into real clinical workflows.",
+    "indexAria": "MycoDx main menu",
+    "scroll": "Discover our work",
+    "backToTop": "Back to top",
+    "navigation": {
+      "research": "Molecular detection · Drug resistance",
+      "people": "Researchers · Clinical collaborators",
+      "publication": "Research output · Validation",
+      "equipment": "Diagnostic platforms · Infrastructure",
+      "gallery": "Laboratory · Research moments",
+      "news": "Updates · Announcements",
+      "contact": "Partnership · General inquiry"
+    },
+    "visuals": {
+      "assay": "A researcher performing an assay with a standard single-channel micropipette and a 96-well plate",
+      "petriCulture": "A researcher examining a Petri dish containing a mycobacterial culture sample",
+      "microscopy": "A precision microscope examining a stained laboratory sample",
+      "collaboration": "Researchers reviewing diagnostic data together"
+    },
+    "focus": {
+      "kicker": "Our focus",
+      "title": "Precision diagnostics for the pathogens that are hardest to see.",
+      "description": "We combine molecular detection, antimicrobial resistance analysis, and intelligent imaging to map mycobacteria with greater speed and confidence. Every system is developed with the realities of laboratory and clinical use in mind.",
+      "link": "Explore research"
+    },
+    "capabilities": {
+      "kicker": "Core capabilities",
+      "title": "Science translated into practical diagnostic systems.",
+      "detection": {
+        "title": "Molecular Detection",
+        "description": "Automated detection workflows identify tuberculosis and NTM signals with precise, repeatable analysis."
+      },
+      "resistance": {
+        "title": "Drug Resistance",
+        "description": "Custom algorithms analyze resistance patterns to support faster and more informed treatment decisions."
+      },
+      "platform": {
+        "title": "Scalable Platform",
+        "description": "A modular architecture connects instruments, image data, and laboratory workflows without unnecessary complexity."
+      }
+    },
+    "story": {
+      "kicker": "MycoDx R&D Center",
+      "title": "Rigorous research, quietly sustained.",
+      "description": "Like the camellia that endures through winter, MycoDx continues the patient work of turning difficult biological signals into clear diagnostic evidence.",
+      "link": "About MycoDx"
+    },
+    "contact": {
+      "kicker": "Work with us",
+      "title": "Let’s make diagnosis clearer.",
+      "description": "For research collaboration, platform integration, or partnership discussions, contact the MycoDx team."
+    }
+  },
+  "hero": {
+    "title": "Revealing the Invisible Tuberculosis, Most Accurately.",
+    "subtitle": "MycoDx designs customized algorithms to accurately map tuberculosis, an increasingly sophisticated threat, using microbiology image analysis solutions.",
+    "point1": "Molecular-based Automated Tuberculosis Diagnosis",
+    "point2": "Precision Drug Resistance Analysis",
+    "point3": "High Scalability and Interoperability of the Platform"
+  },
+  "story": {
+    "title": "The Camellia Story",
+    "subtitle": "The Integrity and Patience of Camellia, MycoDx's Research Shining Invisibly",
+    "description": "Like the resilient camellia, MycoDx silently dedicates itself to research for innovation in microbiology diagnosis and image analysis, building technologies that clearly reveal invisible diseases to the world."
+  },
+  "tech": {
+    "title": "Core Technology",
+    "subtitle": "Proprietary Customized Algorithms & Image Analysis Solutions",
+    "card1_title": "Molecular Detection",
+    "card1_desc": "Automated tuberculosis diagnosis and detection technology through precise molecular-based image analysis.",
+    "card2_title": "Drug Resistance Analysis",
+    "card2_desc": "Rapidly and accurately analyzes tuberculosis drug resistance patterns using proprietary customized algorithms.",
+    "card3_title": "Platform Scalability",
+    "card3_desc": "A high-performance platform that flexibly integrates with various medical data and microbiology analysis systems."
+  },
+  "rd": {
+    "title": "R&D Center",
+    "subtitle": "Advancement of Microbiology Image Analysis Technology",
+    "card1_title": "Certified R&D Organization",
+    "card2_title": "Research Focus",
+    "card3_title": "Research Infrastructure"
+  },
+  "pipeline": {
+    "title": "Development Pipeline",
+    "subtitle": "Step-by-step Milestones Toward Global Commercialization",
+    "step1": "BCG Formulation",
+    "step1_status": "Completed",
+    "step2": "Clinical Validation",
+    "step2_status": "In Progress",
+    "step3": "Application & Deployment",
+    "step3_status": "Upcoming"
+  },
+  "validation": {
+    "title": "Scientific Validation",
+    "subtitle": "Performance Evaluation Results & Global Interoperability Test Academic Achievements"
+  },
+  "partnership": {
+    "title": "Partnership Inquiries",
+    "description": "We invite partners to grow together with MycoDx. Please contact us, and the relevant department will get back to you promptly.",
+    "button": "Contact Us"
+  },
+  "slogan": {
+    "main": "MycoDx",
+    "sub": "Setting a new standard for tuberculosis diagnosis through molecular diagnostic technology and R&D expertise."
+  },
+  "footer": {
+    "rights": "© 2026 MycoDx. All rights reserved.",
+    "address": "7, Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do, Republic of Korea",
+    "email": "info@mycodx.com",
+    "phone": "+82-70-8657-1848"
+  }
+}
