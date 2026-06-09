@@ -1,14 +1,15 @@
+import type { ResearchProject } from '../../data/researchProjects'
 import ResearchCard from './ResearchCard'
 
 interface ResearchGridProps {
-  items: { title: string; description: string; tags: string[]; focus?: string }[]
+  items: ResearchProject[]
 }
 
 export default function ResearchGrid({ items }: ResearchGridProps) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      {items.map((item) => (
-        <ResearchCard key={item.title} {...item} />
+    <div className="research-project-list">
+      {items.map((item, index) => (
+        <ResearchCard key={item.id} project={item} index={index} />
       ))}
     </div>
   )

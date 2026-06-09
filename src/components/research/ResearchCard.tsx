@@ -1,34 +1,53 @@
+import { useTranslation } from 'react-i18next'
+import type { ResearchProject } from '../../data/researchProjects'
+
 interface ResearchCardProps {
-  title: string
-  description: string
-  tags: string[]
-  focus?: string
+  project: ResearchProject
+  index: number
 }
 
-export default function ResearchCard({ title, description, tags, focus }: ResearchCardProps) {
+export default function ResearchCard({ project, index }: ResearchCardProps) {
+  const { t, i18n } = useTranslation()
+  const isEnglish = i18n.language.startsWith('en')
+  const title = isEnglish ? project.title.en || project.title.ko : project.title.ko
+  const ministry = isEnglish ? project.ministry.en : project.ministry.ko
+
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-surface-border bg-white p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-soft hover:border-brand-300">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      
-      <div className="space-y-4">
-        <div className="flex items-start justify-between">
-          <h3 className="max-w-xs text-xl font-semibold text-slate-900">{title}</h3>
+    <article className="research-project-card">
+      <div className="research-project-card__rail">
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <strong>{project.yearRange}</strong>
+      </div>
+
+      <div className="research-project-card__content">
+        <div className="research-project-card__meta">
+          <span>{ministry}</span>
+          {!isEnglish && project.program && <span>{project.program}</span>}
         </div>
 
-        {focus && <p className="text-sm font-medium text-brand-700">{focus}</p>}
-        
-        <p className="text-slate-600 leading-relaxed">{description}</p>
-
-        <div className="flex flex-wrap gap-2 pt-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="research-project-card__title">
+          <span aria-hidden="true">—</span>
+          <h3>{title}</h3>
         </div>
+
+        {!isEnglish && project.summary && (
+          <p className="research-project-card__summary">{project.summary}</p>
+        )}
+
+        <dl>
+          <div>
+            <dt>{t('research.period')}</dt>
+            <dd>{project.period}</dd>
+          </div>
+          <div>
+            <dt>{t('research.principalInvestigator')}</dt>
+            <dd lang="ko">{project.principalInvestigator}</dd>
+          </div>
+          <div>
+            <dt>{t('research.organization')}</dt>
+            <dd lang="ko">{project.organization}</dd>
+          </div>
+        </dl>
       </div>
     </article>
   )

@@ -25,45 +25,35 @@ export default function Members() {
   })
 
   return (
-    <div className="space-y-12">
-      <section className="space-y-6">
-        <div className="space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            {t('people.kicker')}
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-            {t('people.title')}
-          </h1>
-          <p className="max-w-2xl text-lg text-slate-600">{t('people.description')}</p>
-        </div>
-      </section>
+    <div className="editorial-page people-page">
+      <header className="editorial-page__header">
+        <p>{t('people.kicker')}</p>
+        <h1>{t('people.title')}</h1>
+        <span>{t('people.description')}</span>
+      </header>
 
       {membersLoading && <LoadingSpinner />}
       {membersError && <ErrorMessage error={membersError} retry={fetchMembers} />}
       {!membersLoading && !membersError && (
-        <div className="space-y-14">
+        <div className="people-sections">
           {representative && (
-            <section id="pi" className="scroll-mt-32 space-y-6">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">01</p>
-                <h2 className="mt-2 text-2xl font-semibold text-slate-900">
-                  {t('people.representative')}
-                </h2>
+            <section id="pi" className="people-section">
+              <div className="editorial-section-heading">
+                <span>01</span>
+                <h2>{t('people.representative')}</h2>
               </div>
-              <div className="max-w-sm">
+              <div className="people-grid people-grid--representative">
                 <MemberCard {...getMemberCardProps(representative)} />
               </div>
             </section>
           )}
 
-          <section id="current-members" className="scroll-mt-32 space-y-6">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">02</p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-900">
-                {t('people.researchers')}
-              </h2>
+          <section id="current-members" className="people-section">
+            <div className="editorial-section-heading">
+              <span>02</span>
+              <h2>{t('people.researchers')}</h2>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="people-grid">
               {researchers.map((member) => (
                 <MemberCard key={member.id} {...getMemberCardProps(member)} />
               ))}

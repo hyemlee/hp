@@ -99,21 +99,19 @@
 
 .paper-list {
   display: grid;
-  gap: 0.75rem;
+  border-top: 1px solid rgba(20, 35, 58, 0.18);
 }
 
 .paper-card {
   display: block;
-  padding: clamp(2rem, 4vw, 3.3rem);
-  background: #fff;
-  border: 1px solid rgba(20, 35, 58, 0.16);
-  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+  padding: clamp(2rem, 4vw, 3.3rem) 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(20, 35, 58, 0.16);
+  transition: transform 240ms ease;
 }
 
 a.paper-card:hover {
-  border-color: #a52d39;
-  box-shadow: 0 1rem 3rem rgba(20, 35, 58, 0.08);
-  transform: translateY(-0.15rem);
+  transform: translateX(0.4rem);
 }
 
 .publication-year {
@@ -167,23 +165,22 @@ a.paper-card:hover {
 .patent-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  column-gap: clamp(2rem, 5vw, 5rem);
+  border-top: 1px solid rgba(20, 35, 58, 0.18);
 }
 
 .patent-card {
   display: flex;
   min-height: 15rem;
   flex-direction: column;
-  padding: clamp(2rem, 4vw, 3rem);
-  background: #fff;
-  border: 1px solid rgba(20, 35, 58, 0.16);
-  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(20, 35, 58, 0.16);
+  transition: transform 240ms ease;
 }
 
 a.patent-card:hover {
-  border-color: #a52d39;
-  box-shadow: 0 1rem 3rem rgba(20, 35, 58, 0.08);
-  transform: translateY(-0.15rem);
+  transform: translateX(0.4rem);
 }
 
 .patent-inventors {
@@ -259,6 +256,16 @@ a.patent-card:hover {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  html[lang='ko'] .publication-header h1 {
+    font-size: clamp(2.35rem, 4.1vw, 4.2rem);
+  }
+
+  html[lang='ko'] .publication-section__heading h2 {
+    font-size: clamp(1.7rem, 3vw, 2.9rem);
+  }
 }
 
 @media (max-width: 720px) {

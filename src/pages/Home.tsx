@@ -1,16 +1,28 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+  type TouchEvent,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
-import assayImage from '../assets/mycodx-96well-assay.jpg'
 import collaborationImage from '../assets/mycodx-collaboration.jpg'
+import heroAssayImage from '../assets/mycodx-hero-assay.jpg'
+import heroCollaborationImage from '../assets/mycodx-hero-collaboration.jpg'
+import heroCultureImage from '../assets/mycodx-hero-culture.jpg'
 import petriCultureImage from '../assets/mycodx-petri-culture.jpg'
 
 interface RevealProps {
   children: ReactNode
   className?: string
+  delay?: number
 }
 
-function Reveal({ children, className = '' }: RevealProps) {
+const SLIDE_DURATION = 6000
+
+function Reveal({ children, className = '', delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -43,7 +55,11 @@ function Reveal({ children, className = '' }: RevealProps) {
   }, [])
 
   return (
-    <div ref={ref} className={`reveal ${visible ? 'is-visible' : ''} ${className}`}>
+    <div
+      ref={ref}
+      className={`reveal ${visible ? 'is-visible' : ''} ${className}`}
+      style={{ '--reveal-delay': `${delay}ms` } as CSSProperties}
+    >
       {children}
     </div>
   )
@@ -52,9 +68,90 @@ function Reveal({ children, className = '' }: RevealProps) {
 export default function Home() {
   const { t } = useTranslation()
   const location = useLocation()
-  const [showTopButton, setShowTopButton] = useState(false)
+  const touchStartX = useRef<number | null>(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+  const [heroPaused, setHeroPaused] = useState(false)
+  const [reduceMotion, setReduceMotion] = useState(false)
 
   const capabilityKeys = ['detection', 'resistance', 'platform'] as const
+  const heroSlides = [
+    {
+      src: heroAssayImage,
+      altKey: 'home.visuals.assay',
+      labelKey: 'home.slides.assay',
+    },
+    {
+      src: heroCultureImage,
+      altKey: 'home.visuals.petriCulture',
+      labelKey: 'home.slides.culture',
+    },
+    {
+      src: heroCollaborationImage,
+      altKey: 'home.visuals.collaboration',
+      labelKey: 'home.slides.collaboration',
+    },
+  ] as const
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const updateMotionPreference = () => setReduceMotion(mediaQuery.matches)
+
+    updateMotionPreference()
+    mediaQuery.addEventListener('change', updateMotionPreference)
+
+    return () => mediaQuery.removeEventListener('change', updateMotionPreference)
+  }, [])
+
+  useEffect(() => {
+    if (heroPaused || reduceMotion) return
+
+    const interval = window.setInterval(() => {
+      if (!document.hidden) {
+        setActiveSlide((current) => (current + 1) % heroSlides.length)
+      }
+    }, SLIDE_DURATION)
+
+    return () => window.clearInterval(interval)
+  }, [heroPaused, reduceMotion, heroSlides.length])
+
+  useEffect(() => {
+    if (reduceMotion) return
+
+    const parallaxElements = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-parallax]')
+    )
+    let animationFrame = 0
+
+    const updateParallax = () => {
+      const viewportCenter = window.innerHeight / 2
+
+      parallaxElements.forEach((element) => {
+        const bounds = element.getBoundingClientRect()
+        const elementCenter = bounds.top + bounds.height / 2
+        const offset = Math.max(
+          -32,
+          Math.min(32, (viewportCenter - elementCenter) * 0.045)
+        )
+
+        element.style.setProperty('--parallax-y', `${offset}px`)
+      })
+    }
+
+    const requestParallaxUpdate = () => {
+      window.cancelAnimationFrame(animationFrame)
+      animationFrame = window.requestAnimationFrame(updateParallax)
+    }
+
+    updateParallax()
+    window.addEventListener('scroll', requestParallaxUpdate, { passive: true })
+    window.addEventListener('resize', requestParallaxUpdate)
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+      window.removeEventListener('scroll', requestParallaxUpdate)
+      window.removeEventListener('resize', requestParallaxUpdate)
+    }
+  }, [reduceMotion])
 
   useEffect(() => {
     if (!location.hash) return
@@ -66,26 +163,65 @@ export default function Home() {
     return () => window.clearTimeout(timeout)
   }, [location.hash])
 
-  useEffect(() => {
-    const updateTopButton = () => {
-      setShowTopButton(window.scrollY > Math.max(520, window.innerHeight * 0.65))
-    }
+  const showPreviousSlide = () => {
+    setActiveSlide((current) => (
+      current === 0 ? heroSlides.length - 1 : current - 1
+    ))
+  }
 
-    updateTopButton()
-    window.addEventListener('scroll', updateTopButton, { passive: true })
-    return () => window.removeEventListener('scroll', updateTopButton)
-  }, [])
+  const showNextSlide = () => {
+    setActiveSlide((current) => (current + 1) % heroSlides.length)
+  }
+
+  const handleTouchStart = (event: TouchEvent<HTMLElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null
+    setHeroPaused(true)
+  }
+
+  const handleTouchEnd = (event: TouchEvent<HTMLElement>) => {
+    const startX = touchStartX.current
+    const endX = event.changedTouches[0]?.clientX
+
+    touchStartX.current = null
+    setHeroPaused(false)
+
+    if (startX === null || endX === undefined) return
+
+    const distance = endX - startX
+    if (Math.abs(distance) < 48) return
+
+    if (distance > 0) {
+      showPreviousSlide()
+    } else {
+      showNextSlide()
+    }
+  }
 
   return (
     <div className={`home-page ${location.hash ? 'home-page--hash' : ''}`}>
-      <section className="home-hero" aria-labelledby="home-hero-title">
+      <section
+        className={`home-hero ${heroPaused ? 'is-paused' : ''}`}
+        aria-labelledby="home-hero-title"
+        aria-roledescription="carousel"
+        onMouseEnter={() => setHeroPaused(true)}
+        onMouseLeave={() => setHeroPaused(false)}
+        onFocusCapture={() => setHeroPaused(true)}
+        onBlurCapture={() => setHeroPaused(false)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="home-visual">
           <div className="home-visual__images">
-            <img
-              src={assayImage}
-              alt={t('home.visuals.assay')}
-              className="is-active"
-            />
+            {heroSlides.map((slide, index) => (
+              <img
+                key={slide.src}
+                src={slide.src}
+                alt={index === activeSlide ? t(slide.altKey) : ''}
+                className={index === activeSlide ? 'is-active' : ''}
+                aria-hidden={index !== activeSlide}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+              />
+            ))}
           </div>
           <div className="home-visual__veil" />
 
@@ -98,9 +234,41 @@ export default function Home() {
             <p className="home-visual__description">{t('home.description')}</p>
           </div>
 
-          <div className="home-visual__meta" aria-hidden="true">
-            <span>MYCODX / R&amp;D CENTER</span>
-            <span>CHANGWON, KOREA</span>
+          <div className="home-visual__scroll" aria-hidden="true">
+            <span>{t('home.scroll')}</span>
+            <i />
+          </div>
+
+          <div className="home-slider">
+            <div className="home-slider__status" aria-live="polite">
+              <strong>{String(activeSlide + 1).padStart(2, '0')}</strong>
+              <span>/ {String(heroSlides.length).padStart(2, '0')}</span>
+              <small>{t(heroSlides[activeSlide].labelKey)}</small>
+            </div>
+
+            <div className="home-slider__progress" aria-hidden="true">
+              <span
+                key={`${activeSlide}-${heroPaused ? 'paused' : 'playing'}`}
+                style={{ '--slide-duration': `${SLIDE_DURATION}ms` } as CSSProperties}
+              />
+            </div>
+
+            <div className="home-slider__buttons">
+              <button
+                type="button"
+                aria-label={t('home.slides.previous')}
+                onClick={showPreviousSlide}
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                aria-label={t('home.slides.next')}
+                onClick={showNextSlide}
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -129,7 +297,11 @@ export default function Home() {
 
           <div className="home-capabilities__grid">
             {capabilityKeys.map((key, index) => (
-              <Reveal key={key} className="capability-card">
+              <Reveal
+                key={key}
+                className="capability-card"
+                delay={index * 120}
+              >
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3 lang="en">{t(`home.capabilities.${key}.title`)}</h3>
                 <p>{t(`home.capabilities.${key}.description`)}</p>
@@ -139,10 +311,14 @@ export default function Home() {
         </section>
 
         <section className="home-story">
-          <div className="home-story__image">
-            <img src={collaborationImage} alt={t('home.visuals.collaboration')} />
-          </div>
-          <Reveal className="home-story__content">
+          <Reveal className="home-story__image reveal-image reveal-image--left">
+            <img
+              src={collaborationImage}
+              alt={t('home.visuals.collaboration')}
+              data-parallax
+            />
+          </Reveal>
+          <Reveal className="home-story__content" delay={160}>
             <p className="section-kicker">{t('home.story.kicker')}</p>
             <h2>{t('home.story.title')}</h2>
             <p>{t('home.story.description')}</p>
@@ -154,10 +330,14 @@ export default function Home() {
         </section>
 
         <section id="contact" className="home-contact">
-          <div className="home-contact__visual">
-            <img src={petriCultureImage} alt={t('home.visuals.petriCulture')} />
-          </div>
-          <Reveal className="home-contact__content">
+          <Reveal className="home-contact__visual reveal-image reveal-image--up">
+            <img
+              src={petriCultureImage}
+              alt={t('home.visuals.petriCulture')}
+              data-parallax
+            />
+          </Reveal>
+          <Reveal className="home-contact__content" delay={140}>
             <p className="section-kicker">{t('home.contact.kicker')}</p>
             <h2>{t('home.contact.title')}</h2>
             <p>{t('home.contact.description')}</p>
@@ -168,16 +348,6 @@ export default function Home() {
           </Reveal>
         </section>
       </main>
-
-      <button
-        type="button"
-        className={`top-button ${showTopButton ? 'is-visible' : ''}`}
-        aria-label={t('home.backToTop')}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      >
-        <span aria-hidden="true">↑</span>
-        TOP
-      </button>
     </div>
   )
 }

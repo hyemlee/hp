@@ -21,6 +21,7 @@ export default function AppRoutes() {
       <Route path="/members" element={<Members />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/news" element={<News />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
 }

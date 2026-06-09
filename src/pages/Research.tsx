@@ -1,21 +1,10 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import ResearchGrid from '../components/research/ResearchGrid'
 import ResearchSectionHeader from '../components/research/ResearchSectionHeader'
-import LoadingSpinner from '../components/common/LoadingSpinner'
-import ErrorMessage from '../components/common/ErrorMessage'
-import { useDataStore } from '../store/dataStore'
+import { researchProjects } from '../data/researchProjects'
 
 export default function Research() {
   const { t } = useTranslation()
-  const research = useDataStore((state) => state.research)
-  const researchLoading = useDataStore((state) => state.researchLoading)
-  const researchError = useDataStore((state) => state.researchError)
-  const fetchResearch = useDataStore((state) => state.fetchResearch)
-
-  useEffect(() => {
-    fetchResearch()
-  }, [fetchResearch])
 
   return (
     <div className="research-page">
@@ -33,13 +22,18 @@ export default function Research() {
         <div className="research-initiatives__heading">
           <span>01</span>
           <div>
-            <h2>{t('research.initiativesTitle')}</h2>
-            <p>{t('research.initiativesDescription')}</p>
+            <div className="research-initiatives__title-row">
+              <h2>{t('research.initiativesTitle')}</h2>
+              <p>
+                {t('research.total')} <strong>{researchProjects.length}</strong>
+              </p>
+            </div>
+            <p className="research-initiatives__description">
+              {t('research.initiativesDescription')}
+            </p>
           </div>
         </div>
-        {researchLoading && <LoadingSpinner />}
-        {researchError && <ErrorMessage error={researchError} retry={fetchResearch} />}
-        {!researchLoading && !researchError && <ResearchGrid items={research} />}
+        <ResearchGrid items={researchProjects} />
       </section>
     </div>
   )

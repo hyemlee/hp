@@ -25,8 +25,13 @@
     "kicker": "Research Areas",
     "title": "마이코박테리아 진단을 위한 정밀 연구",
     "description": "MycoDx는 결핵균과 비결핵항산균의 정밀 검출, 약제 내성 분석, 임상 적용을 위한 진단 기술을 연구합니다.",
-    "initiativesTitle": "핵심 연구 분야",
-    "initiativesDescription": "MycoDx의 진단 기술과 연구개발을 구성하는 주요 영역입니다."
+    "initiativesTitle": "주요 연구과제",
+    "initiativesDescription": "연도별 중복 기록을 하나의 과제로 통합하여 MycoDx 연구진이 수행하거나 참여한 연구개발 이력을 소개합니다.",
+    "total": "Total.",
+    "projectBadge": "과제",
+    "period": "연구기간",
+    "principalInvestigator": "연구책임자",
+    "organization": "수행기관"
   },
   "gallery": {
     "kicker": "Gallery",
@@ -37,7 +42,7 @@
     "kicker": "About MycoDx",
     "title": "보이지 않는 결핵을,\n가장 정확하게 드러내다.",
     "lead": "마이코디엑스는 다년간 바이오 산업의 최전선에서 전문성을 쌓아온 전문가들이 설립한 감염병 진단 혁신 스타트업입니다.",
-    "heroImageAlt": "현미경으로 미세한 병원체 샘플을 정밀 분석하는 모습",
+    "heroImageAlt": "페트리 접시의 마이코박테리아 배양 시료를 관찰하는 연구원",
     "focusLabel": "MycoDx 핵심 진단 영역",
     "intro": {
       "kicker": "Who we are",
@@ -110,6 +115,24 @@
     "country": "국가",
     "registrationNumber": "등록번호"
   },
+  "equipment": {
+    "kicker": "Equipment",
+    "title": "연구 장비",
+    "description": "MycoDx의 연구 장비 정보는 실제 도입과 운영이 확인된 이후 순차적으로 공개합니다.",
+    "status": "현재 상태",
+    "placeholderTitle": "등록된 장비가 아직 없습니다.",
+    "placeholderDescription": "확인되지 않은 장비나 제품 정보를 임의로 표시하지 않습니다. 공개 가능한 장비 정보가 준비되면 이 페이지에서 안내하겠습니다."
+  },
+  "newsPage": {
+    "kicker": "News",
+    "title": "MycoDx 소식",
+    "description": "MycoDx의 공식 소식과 공지사항을 전합니다.",
+    "websiteLaunch": {
+      "date": "2026.06",
+      "title": "MycoDx 공식 홈페이지를 개설했습니다.",
+      "summary": "MycoDx의 연구 방향, 연구진, 연구 성과와 회사 소식을 보다 명확하게 전달하기 위해 공식 홈페이지를 개설했습니다."
+    }
+  },
   "home": {
     "eyebrow": "결핵·비결핵항산균 분자진단",
     "titleLine1": "보이지 않는 것을",
@@ -120,11 +143,18 @@
     "indexAria": "MycoDx 주요 메뉴",
     "scroll": "연구 살펴보기",
     "backToTop": "맨 위로 이동",
+    "slides": {
+      "assay": "96웰 정밀 분석",
+      "culture": "마이코박테리아 배양 연구",
+      "collaboration": "연구 결과 검토",
+      "previous": "이전 비주얼",
+      "next": "다음 비주얼"
+    },
     "navigation": {
       "research": "분자진단 · 약제 내성 분석",
       "people": "연구진 · 임상 협력",
       "publication": "연구 성과 · 성능 검증",
-      "equipment": "진단 플랫폼 · 연구 인프라",
+      "equipment": "연구 장비 · 정보 준비 중",
       "gallery": "연구소 · 연구 기록",
       "news": "새 소식 · 공지사항",
       "contact": "파트너십 · 일반 문의"
@@ -132,7 +162,6 @@
     "visuals": {
       "assay": "일반 단일 채널 마이크로피펫과 96웰 플레이트로 분석 실험을 진행하는 연구원",
       "petriCulture": "페트리 접시의 마이코박테리아 배양 샘플을 관찰하는 연구원",
-      "microscopy": "염색된 연구 샘플을 관찰하는 정밀 현미경",
       "collaboration": "진단 데이터를 함께 검토하는 연구진"
     },
     "focus": {

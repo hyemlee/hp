@@ -25,8 +25,13 @@
     "kicker": "Research Areas",
     "title": "Precision research for mycobacterial diagnostics",
     "description": "MycoDx researches diagnostic technologies for the precise detection of tuberculosis and NTM, antimicrobial resistance analysis, and clinical application.",
-    "initiativesTitle": "Core Research Areas",
-    "initiativesDescription": "The principal areas that shape MycoDx diagnostic technology and research development."
+    "initiativesTitle": "Research Projects",
+    "initiativesDescription": "An overview of research and development projects conducted or supported by members of the MycoDx research team, with annual duplicate records consolidated.",
+    "total": "Total.",
+    "projectBadge": "Project",
+    "period": "Period",
+    "principalInvestigator": "Principal investigator",
+    "organization": "Organization"
   },
   "gallery": {
     "kicker": "Gallery",
@@ -37,7 +42,7 @@
     "kicker": "About MycoDx",
     "title": "Revealing invisible tuberculosis\nwith uncompromising precision.",
     "lead": "MycoDx is an infectious-disease diagnostics startup founded by experts with extensive experience at the forefront of the biotechnology industry.",
-    "heroImageAlt": "A microscope performing precision analysis on a microscopic pathogen sample",
+    "heroImageAlt": "A researcher examining a Petri dish containing a mycobacterial culture sample",
     "focusLabel": "MycoDx core diagnostic areas",
     "intro": {
       "kicker": "Who we are",
@@ -110,6 +115,24 @@
     "country": "Country",
     "registrationNumber": "Registration No."
   },
+  "equipment": {
+    "kicker": "Equipment",
+    "title": "Research Equipment",
+    "description": "MycoDx will publish equipment information only after installation and operation have been verified.",
+    "status": "Current status",
+    "placeholderTitle": "No equipment has been listed yet.",
+    "placeholderDescription": "We do not display unverified equipment or product information. Verified equipment details will be added here when they are ready for publication."
+  },
+  "newsPage": {
+    "kicker": "News",
+    "title": "MycoDx News",
+    "description": "Official news and announcements from MycoDx.",
+    "websiteLaunch": {
+      "date": "Jun 2026",
+      "title": "The official MycoDx website is now open.",
+      "summary": "We launched the official MycoDx website to share our research direction, team, research output, and company news more clearly."
+    }
+  },
   "home": {
     "eyebrow": "Mycobacteria Molecular Diagnostics",
     "titleLine1": "Making the",
@@ -120,11 +143,18 @@
     "indexAria": "MycoDx main menu",
     "scroll": "Discover our work",
     "backToTop": "Back to top",
+    "slides": {
+      "assay": "96-well precision assay",
+      "culture": "Mycobacterial culture research",
+      "collaboration": "Collaborative research review",
+      "previous": "Previous visual",
+      "next": "Next visual"
+    },
     "navigation": {
       "research": "Molecular detection · Drug resistance",
       "people": "Researchers · Clinical collaborators",
       "publication": "Research output · Validation",
-      "equipment": "Diagnostic platforms · Infrastructure",
+      "equipment": "Research equipment · Coming soon",
       "gallery": "Laboratory · Research moments",
       "news": "Updates · Announcements",
       "contact": "Partnership · General inquiry"
@@ -132,7 +162,6 @@
     "visuals": {
       "assay": "A researcher performing an assay with a standard single-channel micropipette and a 96-well plate",
       "petriCulture": "A researcher examining a Petri dish containing a mycobacterial culture sample",
-      "microscopy": "A precision microscope examining a stained laboratory sample",
       "collaboration": "Researchers reviewing diagnostic data together"
     },
     "focus": {
