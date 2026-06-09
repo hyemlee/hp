@@ -345,15 +345,6 @@
   color: rgba(255, 255, 255, 0.48);
 }
 
-.home-slider__status small {
-  grid-column: 1 / -1;
-  margin-top: 0.3rem;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.57rem;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
-
 .home-slider__progress {
   height: 1px;
   overflow: hidden;
@@ -948,10 +939,6 @@ html[lang='ko'] .home-contact h2 {
 
   .home-slider__status {
     min-width: 4.2rem;
-  }
-
-  .home-slider__status small {
-    display: none;
   }
 
   .home-slider__buttons button {

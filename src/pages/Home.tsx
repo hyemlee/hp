@@ -239,7 +239,6 @@ export default function Home() {
             <div className="home-slider__status" aria-live="polite">
               <strong>{String(activeSlide + 1).padStart(2, '0')}</strong>
               <span>/ {String(heroSlides.length).padStart(2, '0')}</span>
-              <small>{t(heroSlides[activeSlide].labelKey)}</small>
             </div>
 
             <div className="home-slider__progress" aria-hidden="true">
