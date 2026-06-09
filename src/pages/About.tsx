@@ -2,15 +2,12 @@ import { useTranslation } from 'react-i18next'
 import petriCultureImage from '../assets/mycodx-petri-culture.jpg'
 import AboutIntro from '../components/about/AboutIntro'
 import AboutVision from '../components/about/AboutVision'
-import ResearchSectionHeader from '../components/research/ResearchSectionHeader'
 
 export default function About() {
   const { t } = useTranslation()
 
   return (
     <div className="about-page">
-      <ResearchSectionHeader />
-
       <header className="about-hero">
         <div className="about-hero__copy">
           <p className="about-kicker">{t('about.kicker')}</p>

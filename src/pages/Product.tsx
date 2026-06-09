@@ -4,20 +4,20 @@ export default function Product() {
   const { t } = useTranslation()
 
   return (
-    <div className="editorial-page equipment-page">
+    <div className="editorial-page product-page">
       <header className="editorial-page__header">
-        <p>{t('equipment.kicker')}</p>
-        <h1>{t('equipment.title')}</h1>
-        <span>{t('equipment.description')}</span>
+        <p>{t('product.kicker')}</p>
+        <h1>{t('product.title')}</h1>
+        <span>{t('product.description')}</span>
       </header>
 
-      <section className="equipment-placeholder" aria-labelledby="equipment-status-title">
-        <span className="equipment-placeholder__index">01 / EQUIPMENT</span>
-        <div className="equipment-placeholder__copy">
-          <p>{t('equipment.status')}</p>
+      <section className="product-placeholder" aria-labelledby="product-status-title">
+        <span className="product-placeholder__index">01 / PRODUCT</span>
+        <div className="product-placeholder__copy">
+          <p>{t('product.status')}</p>
           <div>
-            <h2 id="equipment-status-title">{t('equipment.placeholderTitle')}</h2>
-            <p>{t('equipment.placeholderDescription')}</p>
+            <h2 id="product-status-title">{t('product.placeholderTitle')}</h2>
+            <p>{t('product.placeholderDescription')}</p>
           </div>
         </div>
       </section>

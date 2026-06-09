@@ -13,7 +13,14 @@
     "contact": "Contact",
     "changeLanguage": "Change language",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "navigation": {
+      "about": "About",
+      "product": "Products",
+      "gallery": "Gallery",
+      "news": "News",
+      "contact": "Contact"
+    }
   },
   "researchNavigation": {
     "aria": "Research sections",
@@ -115,13 +122,13 @@
     "country": "Country",
     "registrationNumber": "Registration No."
   },
-  "equipment": {
-    "kicker": "Equipment",
-    "title": "Research Equipment",
-    "description": "MycoDx will publish equipment information only after installation and operation have been verified.",
+  "product": {
+    "kicker": "Product",
+    "title": "Product Introduction",
+    "description": "MycoDx will publish product information after development and disclosure preparations are complete.",
     "status": "Current status",
-    "placeholderTitle": "No equipment has been listed yet.",
-    "placeholderDescription": "We do not display unverified equipment or product information. Verified equipment details will be added here when they are ready for publication."
+    "placeholderTitle": "Product information is being prepared.",
+    "placeholderDescription": "We do not display unverified product information. Accurate product details will be added here when they are ready for publication."
   },
   "newsPage": {
     "kicker": "News",
@@ -134,7 +141,6 @@
     }
   },
   "home": {
-    "eyebrow": "Mycobacteria Molecular Diagnostics",
     "titleLine1": "Making the",
     "titleLine2": "invisible visible.",
     "description": "MycoDx develops precise molecular diagnostic and image-analysis solutions that reveal tuberculosis and non-tuberculous mycobacteria faster and more clearly.",
@@ -144,9 +150,6 @@
     "scroll": "Discover our work",
     "backToTop": "Back to top",
     "slides": {
-      "assay": "96-well precision assay",
-      "culture": "Mycobacterial culture research",
-      "collaboration": "Collaborative research review",
       "previous": "Previous visual",
       "next": "Next visual"
     },
@@ -154,7 +157,7 @@
       "research": "Molecular detection · Drug resistance",
       "people": "Researchers · Clinical collaborators",
       "publication": "Research output · Validation",
-      "equipment": "Research equipment · Coming soon",
+      "equipment": "Product information · Coming soon",
       "gallery": "Laboratory · Research moments",
       "news": "Updates · Announcements",
       "contact": "Partnership · General inquiry"
@@ -168,7 +171,7 @@
       "kicker": "Our focus",
       "title": "Precision diagnostics for the pathogens that are hardest to see.",
       "description": "We combine molecular detection, antimicrobial resistance analysis, and intelligent imaging to map mycobacteria with greater speed and confidence. Every system is developed with the realities of laboratory and clinical use in mind.",
-      "link": "Explore research"
+      "link": "About MycoDx"
     },
     "capabilities": {
       "kicker": "Core capabilities",

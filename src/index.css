@@ -178,7 +178,7 @@ html[lang='en'] .inner-page h3,
 @media (max-width: 767px) {
   .inner-page {
     width: min(calc(100% - 2rem), 80rem);
-    padding: 6.5rem 0 4rem;
+    padding: 140px 0 4rem;
   }
 
   .top-button {

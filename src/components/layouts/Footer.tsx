@@ -26,13 +26,13 @@ const Footer = () => {
               {t('menu.ABOUT')}
             </h3>            <ul className="mt-4 space-y-3">
               <li>
-                <Link to="/research/introduction" className="text-sm text-gray-500 hover:text-blue-900 transition-colors">
+                <Link to="/about" className="text-sm text-gray-500 hover:text-blue-900 transition-colors">
                   Company
                 </Link>
               </li>
               <li>
-                <Link to="/members" className="text-sm text-gray-500 hover:text-blue-900 transition-colors">
-                  Team
+                <Link to="/product" className="text-sm text-gray-500 hover:text-blue-900 transition-colors">
+                  Product
                 </Link>
               </li>
               <li>

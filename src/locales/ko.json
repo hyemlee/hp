@@ -13,7 +13,14 @@
     "contact": "문의하기",
     "changeLanguage": "언어 변경",
     "openMenu": "메뉴 열기",
-    "closeMenu": "메뉴 닫기"
+    "closeMenu": "메뉴 닫기",
+    "navigation": {
+      "about": "회사소개",
+      "product": "제품소개",
+      "gallery": "갤러리",
+      "news": "소식",
+      "contact": "문의"
+    }
   },
   "researchNavigation": {
     "aria": "Research 하위 메뉴",
@@ -115,13 +122,13 @@
     "country": "국가",
     "registrationNumber": "등록번호"
   },
-  "equipment": {
-    "kicker": "Equipment",
-    "title": "연구 장비",
-    "description": "MycoDx의 연구 장비 정보는 실제 도입과 운영이 확인된 이후 순차적으로 공개합니다.",
+  "product": {
+    "kicker": "Product",
+    "title": "제품소개",
+    "description": "MycoDx의 제품 정보는 개발과 공개 준비가 완료된 이후 순차적으로 안내합니다.",
     "status": "현재 상태",
-    "placeholderTitle": "등록된 장비가 아직 없습니다.",
-    "placeholderDescription": "확인되지 않은 장비나 제품 정보를 임의로 표시하지 않습니다. 공개 가능한 장비 정보가 준비되면 이 페이지에서 안내하겠습니다."
+    "placeholderTitle": "제품 정보를 준비하고 있습니다.",
+    "placeholderDescription": "확인되지 않은 제품 정보를 임의로 표시하지 않습니다. 공개 가능한 제품 정보가 준비되면 이 페이지에서 정확하게 안내하겠습니다."
   },
   "newsPage": {
     "kicker": "News",
@@ -134,7 +141,6 @@
     }
   },
   "home": {
-    "eyebrow": "결핵·비결핵항산균 분자진단",
     "titleLine1": "보이지 않는 것을",
     "titleLine2": "명확하게.",
     "description": "MycoDx는 결핵균과 비결핵항산균을 더 빠르고 정확하게 드러내는 분자진단 및 지능형 영상분석 솔루션을 개발합니다.",
@@ -144,9 +150,6 @@
     "scroll": "연구 살펴보기",
     "backToTop": "맨 위로 이동",
     "slides": {
-      "assay": "96웰 정밀 분석",
-      "culture": "마이코박테리아 배양 연구",
-      "collaboration": "연구 결과 검토",
       "previous": "이전 비주얼",
       "next": "다음 비주얼"
     },
@@ -154,7 +157,7 @@
       "research": "분자진단 · 약제 내성 분석",
       "people": "연구진 · 임상 협력",
       "publication": "연구 성과 · 성능 검증",
-      "equipment": "연구 장비 · 정보 준비 중",
+      "equipment": "제품 정보 · 준비 중",
       "gallery": "연구소 · 연구 기록",
       "news": "새 소식 · 공지사항",
       "contact": "파트너십 · 일반 문의"
@@ -168,7 +171,7 @@
       "kicker": "Our focus",
       "title": "가장 발견하기 어려운 병원체를 위한 정밀 진단.",
       "description": "분자 기반 탐지, 약제 내성 분석, 지능형 영상 기술을 결합해 결핵균을 더 빠르고 명확하게 매핑합니다. 모든 시스템은 연구실과 임상 현장에서 실제로 사용되는 흐름을 고려해 설계합니다.",
-      "link": "연구 분야 보기"
+      "link": "MycoDx 소개 보기"
     },
     "capabilities": {
       "kicker": "Core capabilities",
@@ -188,7 +191,7 @@
     },
     "story": {
       "kicker": "MycoDx R&D Center",
-      "title": "묵묵한 연구가 만드는 분명한 결과.",
+      "title": "밀도 높은 연구가 만드는 분명한 결과.",
       "description": "겨울을 견디는 동백처럼 MycoDx는 쉽게 드러나지 않는 생물학적 신호를 명확한 진단 근거로 바꾸는 연구를 꾸준히 이어갑니다.",
       "link": "MycoDx 소개"
     },

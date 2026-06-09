@@ -78,17 +78,14 @@ export default function Home() {
     {
       src: heroAssayImage,
       altKey: 'home.visuals.assay',
-      labelKey: 'home.slides.assay',
     },
     {
       src: heroCultureImage,
       altKey: 'home.visuals.petriCulture',
-      labelKey: 'home.slides.culture',
     },
     {
       src: heroCollaborationImage,
       altKey: 'home.visuals.collaboration',
-      labelKey: 'home.slides.collaboration',
     },
   ] as const
 
@@ -226,7 +223,6 @@ export default function Home() {
           <div className="home-visual__veil" />
 
           <div className="home-visual__copy">
-            <p className="home-eyebrow">{t('home.eyebrow')}</p>
             <h1 id="home-hero-title">
               {t('home.titleLine1')}
               <span>{t('home.titleLine2')}</span>
@@ -282,7 +278,7 @@ export default function Home() {
 
           <Reveal className="home-focus__body">
             <p>{t('home.focus.description')}</p>
-            <Link to="/research/areas" className="text-link">
+            <Link to="/about" className="text-link">
               {t('home.focus.link')}
               <span aria-hidden="true">↗</span>
             </Link>
@@ -322,7 +318,7 @@ export default function Home() {
             <p className="section-kicker">{t('home.story.kicker')}</p>
             <h2>{t('home.story.title')}</h2>
             <p>{t('home.story.description')}</p>
-            <Link to="/research/introduction" className="text-link text-link--light">
+            <Link to="/about" className="text-link text-link--light">
               {t('home.story.link')}
               <span aria-hidden="true">↗</span>
             </Link>

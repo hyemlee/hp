@@ -169,7 +169,7 @@
   text-transform: uppercase;
 }
 
-.equipment-placeholder {
+.product-placeholder {
   display: grid;
   grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
   min-height: clamp(22rem, 42vw, 34rem);
@@ -178,21 +178,21 @@
   border-bottom: 1px solid rgba(20, 35, 58, 0.2);
 }
 
-.equipment-placeholder__index {
+.product-placeholder__index {
   color: #a52d39;
   font-size: 0.68rem;
   font-weight: 750;
   letter-spacing: 0.12em;
 }
 
-.equipment-placeholder__copy {
+.product-placeholder__copy {
   display: grid;
   align-content: space-between;
   gap: 4rem;
   padding: 0 0 clamp(3rem, 7vw, 6rem);
 }
 
-.equipment-placeholder__copy > p {
+.product-placeholder__copy > p {
   margin: 0;
   color: #8490a0;
   font-size: 0.75rem;
@@ -201,7 +201,7 @@
   text-transform: uppercase;
 }
 
-.equipment-placeholder__copy h2 {
+.product-placeholder__copy h2 {
   max-width: 42rem;
   margin: 0;
   color: #17243a;
@@ -211,14 +211,14 @@
   letter-spacing: -0.05em;
 }
 
-.equipment-placeholder__copy div > p {
+.product-placeholder__copy div > p {
   max-width: 42rem;
   margin: 1.5rem 0 0;
   color: #6d798a;
   line-height: 1.8;
 }
 
-html[lang='ko'] .equipment-placeholder__copy h2 {
+html[lang='ko'] .product-placeholder__copy h2 {
   font-size: clamp(1.8rem, 3.2vw, 3.4rem);
   letter-spacing: -0.045em;
 }
@@ -304,7 +304,7 @@ html[lang='ko'] .equipment-placeholder__copy h2 {
     min-height: 0;
   }
 
-  .equipment-placeholder {
+  .product-placeholder {
     grid-template-columns: 1fr;
     gap: 3rem;
     min-height: 26rem;
